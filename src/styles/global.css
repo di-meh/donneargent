@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Neue Bit';
+    src: url('/fonts/PPNeueBit-Regular.woff2') format('woff2'),
+         url('/fonts/PPNeueBit-Bold.woff2') format('woff2');
+    font-weight: 400, 700;
+}
+
+@font-face {
+    font-family: 'Mondwest';
+    src: url('/fonts/PPMondwest-Regular.woff2') format('woff2'),
+         url('/fonts/PPMondwest-Bold.woff2') format('woff2');
+    font-weight: 400, 700;
+}
+
+@import "tailwindcss";
+
+@theme {
+    --font-jacquard: 'Jacquard 24', system-ui;
+    --font-neue-bit: 'Neue Bit', system-ui;
+    --font-mondwest: 'Mondwest', system-ui;
+}
