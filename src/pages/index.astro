@@ -18,7 +18,9 @@ import { Scene } from '../components/Scene';
 				<p class="text-lg font-neue-bit">Ce message est sponsorisé par Mehdi Saber.</p>
 			</div>
 		</noscript>
-		<Scene client:only="react" />
+		<Scene client:only="react">
+			<p class="font-mondwest text-4xl h-full flex items-center justify-center text-center" slot="fallback">Loading...</p>
+		</Scene>
 	</main>
 	
 </Layout>
