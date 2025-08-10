@@ -24,8 +24,8 @@ export function Game() {
     return (
         <>
             <Suspense fallback={<Loader />}>
-                <PerspectiveCamera makeDefault position={[0, 20, 10]} fov={50} />
                 <OrbitControls />
+                <PerspectiveCamera makeDefault position={[0, 20, 10]} fov={50} />
                 <directionalLight color={'#C4FFFF'} intensity={1.5} position={[0, 50, 0]} />
                 <ambientLight color={'#C4FFFF'} intensity={0.5} />
                 <pointLight color={'#FFD675'} intensity={50} position={[15, 15, 0]} />

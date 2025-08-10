@@ -10,6 +10,7 @@ import { RapierRigidBody, RigidBody, type RigidBodyProps, vec3 } from '@react-th
 import type { Entity } from "koota";
 import { Mesh, Position, Velocity } from '../../koota/traits'
 import { useFrame, useThree } from '@react-three/fiber'
+import type { MoneyProps } from '../types'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -18,11 +19,7 @@ type GLTFResult = GLTF & {
   materials: {}
 }
 
-interface CoinProps extends RigidBodyProps {
-  entity: Entity;
-}
-
-export function Coin({entity, ...props}: CoinProps): JSX.Element {
+export function Coin({entity, ...props}: MoneyProps): JSX.Element {
   const { nodes, materials } = useGLTF('/models/coin.glb') as unknown as GLTFResult
   const rbRef = useRef<RapierRigidBody>(null)
   const groupRef = useRef<THREE.Group>(null)
@@ -35,7 +32,7 @@ export function Coin({entity, ...props}: CoinProps): JSX.Element {
     entity.add(Mesh(groupRef.current as THREE.Object3D));
     rbRef.current.setTranslation(vec3(position), true);
     return () => {
-      entity.remove(Mesh);
+      entity.destroy();
     }
   }, [entity]);
 
@@ -44,7 +41,7 @@ export function Coin({entity, ...props}: CoinProps): JSX.Element {
     if (velocity && !impulseApplied.current && rbRef.current.mass() > 0) {
       console.log('Coin entity:', entity, 'mass:', rbRef.current.mass());
       rbRef.current.applyImpulse(velocity, true);
-      const randomTorque = {x: (Math.random() - 1)/10, y:(Math.random() - 1)/10, z: (Math.random() - 1)/10};
+      const randomTorque = {x: (Math.random() - 1)/200, y:(Math.random() - 1)/200, z: (Math.random() - 1)/200};
       rbRef.current.applyTorqueImpulse(randomTorque, true);
       impulseApplied.current = true;
     }
@@ -52,7 +49,7 @@ export function Coin({entity, ...props}: CoinProps): JSX.Element {
 
   return (
     <RigidBody ref={rbRef} type="dynamic" colliders="hull" name="coin" {...props}>
-        <group ref={groupRef} scale={[1,3,1]} dispose={null}>
+        <group ref={groupRef} scale={[.5,2,.5]} dispose={null}>
         <mesh
             castShadow
             receiveShadow

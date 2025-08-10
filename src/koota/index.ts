@@ -5,18 +5,29 @@ import { SyncPositionToThree } from "./systems";
 
 
 export const world = createWorld();
-export const schedule = new Schedule<{ world: World, delta: number }>();
+// export const schedule = new Schedule<{ world: World, delta: number }>();
 // schedule.add(SyncPositionToThree);
 // schedule.build();
 
-export type MoneyType = "coin" | "stack" | "ingot";
+export enum MoneyType {
+    Coin = "coin",
+    Stack = "stack",
+    Ingot = "ingot"
+};
 
 export const actions = createActions((world: World) =>  ({
     throwMoney: (moneyType: MoneyType) => {
-        console.log(`Throwing ${moneyType}`);
-        const type = moneyType === "coin" ? IsCoin : moneyType === "stack" ? IsStack : IsIngot
-        const velocity = Velocity({x: 0, y: 1, z: -1.5});
-        const position = Position({x: (Math.random() - 0.5) * 4, y: 0, z: 10});
+        const type = moneyType === MoneyType.Coin ? IsCoin :
+            moneyType === MoneyType.Stack ? IsStack : IsIngot;
+
+        const velocityTypes = {
+            [MoneyType.Coin]: {x: 0, y: 0.05, z: -0.325},
+            [MoneyType.Stack]: {x: 0, y: 0.05, z: -1.325},
+            [MoneyType.Ingot]: {x: 0, y: 0.15, z: -3.325}
+        }
+        const velocity = Velocity(velocityTypes[moneyType]);
+
+        const position = Position({x: (Math.random() - 0.5) * 4, y: 3, z: 14});
         world.spawn(type, velocity, position)
     }
 }));
