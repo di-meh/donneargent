@@ -6,7 +6,7 @@ import * as THREE from 'three'
 import { useGLTF } from '@react-three/drei'
 import type { GLTF } from 'three-stdlib'
 import type { JSX } from 'react'
-import { RigidBody } from '@react-three/rapier'
+import { RigidBody, type RigidBodyProps } from '@react-three/rapier'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -15,11 +15,11 @@ type GLTFResult = GLTF & {
   materials: {}
 }
 
-export function Ingot(props: JSX.IntrinsicElements['group']) {
+export function Ingot(props: RigidBodyProps) {
   const { nodes, materials } = useGLTF('/models/ingot.glb') as unknown as GLTFResult
   return (
-    <RigidBody type="dynamic" colliders="hull" name="ingot">
-        <group {...props} dispose={null}>
+    <RigidBody type="dynamic" colliders="hull" name="ingot" {...props} >
+        <group dispose={null}>
         <mesh
             castShadow
             receiveShadow

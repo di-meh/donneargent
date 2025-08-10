@@ -6,7 +6,7 @@ import * as THREE from 'three'
 import { type JSX } from 'react'
 import { useGLTF } from '@react-three/drei'
 import type { GLTF } from 'three-stdlib'
-import { RigidBody } from '@react-three/rapier'
+import { RigidBody, type RigidBodyProps } from '@react-three/rapier'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -15,11 +15,11 @@ type GLTFResult = GLTF & {
   materials: {}
 }
 
-export function Stack(props: JSX.IntrinsicElements['group']) {
+export function Stack(props: RigidBodyProps) {
   const { nodes, materials } = useGLTF('/models/stack.glb') as unknown as GLTFResult
   return (
-    <RigidBody type="dynamic" colliders="cuboid" name="stack">
-        <group {...props} dispose={null}>
+    <RigidBody type="dynamic" colliders="cuboid" name="stack" {...props}>
+        <group dispose={null}>
         <mesh
             name="stack"
             castShadow

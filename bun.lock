@@ -17,6 +17,7 @@
         "@types/react-dom": "^19.1.7",
         "@types/three": "^0.179.0",
         "astro": "^5.12.8",
+        "directed": "^0.1.6",
         "koota": "^0.5.0",
         "leva": "^0.10.0",
         "react": "^19.1.1",
@@ -575,6 +576,8 @@
     "didyoumean": ["didyoumean@1.2.2", "", {}, "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw=="],
 
     "diff": ["diff@5.2.0", "", {}, "sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A=="],
+
+    "directed": ["directed@0.1.6", "", { "peerDependencies": { "@types/react": ">=18.0.0", "react": ">=18.0.0" }, "optionalPeers": ["@types/react", "react"] }, "sha512-nF5Zm9Fdanolvvg/pohiuOfchRe5563LCVxFMekwwLz5vciRiK9Ej8B3JbKPGUsDeY5znStFPzSpZv3BtTwIoQ=="],
 
     "dlv": ["dlv@1.1.3", "", {}, "sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA=="],
 

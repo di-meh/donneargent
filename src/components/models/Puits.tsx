@@ -6,7 +6,7 @@ import * as THREE from 'three'
 import { useGLTF } from '@react-three/drei'
 import type { GLTF } from 'three-stdlib'
 import type { JSX } from 'react'
-import { RigidBody } from '@react-three/rapier'
+import { RigidBody, type RigidBodyProps } from '@react-three/rapier'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -19,11 +19,11 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Puits(props: JSX.IntrinsicElements['group']) {
+export function Puits(props: RigidBodyProps) {
   const { nodes, materials } = useGLTF('/models/scene.glb') as unknown as GLTFResult
   return (
-    <RigidBody type="fixed" colliders="trimesh" name="floor">
-        <group {...props} dispose={null}>
+    <RigidBody type="fixed" colliders="trimesh" name="floor" {...props}>
+        <group dispose={null}>
         <mesh
             name="Puits"
             castShadow
