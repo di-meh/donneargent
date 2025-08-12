@@ -38,9 +38,8 @@ export function Stack({entity, ...props}: MoneyProps): JSX.Element {
   useFrame(() => {
     if (!rbRef.current) return;
     if (velocity && !impulseApplied.current && rbRef.current.mass() > 0) {
-      console.log('Coin entity:', entity, 'mass:', rbRef.current.mass());
       rbRef.current.applyImpulse(velocity, true);
-      const randomTorque = {x: (Math.random() - 1)/200, y:(Math.random() - 1)/200, z: (Math.random() - 1)/200};
+      const randomTorque = {x: (Math.random() - 1)/20, y:(Math.random() - 1)/20, z: (Math.random() - 1)/20};
       rbRef.current.applyTorqueImpulse(randomTorque, true);
       impulseApplied.current = true;
     }
@@ -48,7 +47,7 @@ export function Stack({entity, ...props}: MoneyProps): JSX.Element {
 
   return (
     <RigidBody ref={rbRef} type="dynamic" colliders="cuboid" name="stack" {...props}>
-        <group scale={[2,2,2]} ref={groupRef} dispose={null}>
+        <group scale={[3,3,3]} ref={groupRef} dispose={null}>
         <mesh
             name="stack"
             castShadow

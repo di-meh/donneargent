@@ -38,9 +38,8 @@ export function Ingot({entity, ...props}: MoneyProps): JSX.Element {
     useFrame(() => {
       if (!rbRef.current) return;
       if (velocity && !impulseApplied.current && rbRef.current.mass() > 0) {
-        console.log('Coin entity:', entity, 'mass:', rbRef.current.mass());
         rbRef.current.applyImpulse(velocity, true);
-        const randomTorque = {x: (Math.random() - 1)/200, y:(Math.random() - 1)/200, z: (Math.random() - 1)/200};
+        const randomTorque = {x: (Math.random() - 1)*2, y:(Math.random() - 1)*2, z: (Math.random() - 1)*2};
         rbRef.current.applyTorqueImpulse(randomTorque, true);
         impulseApplied.current = true;
       }
@@ -48,7 +47,7 @@ export function Ingot({entity, ...props}: MoneyProps): JSX.Element {
 
   return (
     <RigidBody ref={rbRef} type="dynamic" colliders="hull" name="ingot" {...props} >
-        <group scale={[2,2,2]} ref={groupRef} dispose={null}>
+        <group scale={[4,4,4]} ref={groupRef} dispose={null}>
         <mesh
             castShadow
             receiveShadow

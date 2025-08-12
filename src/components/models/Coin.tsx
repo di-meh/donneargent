@@ -39,7 +39,6 @@ export function Coin({entity, ...props}: MoneyProps): JSX.Element {
   useFrame(() => {
     if (!rbRef.current) return;
     if (velocity && !impulseApplied.current && rbRef.current.mass() > 0) {
-      console.log('Coin entity:', entity, 'mass:', rbRef.current.mass());
       rbRef.current.applyImpulse(velocity, true);
       const randomTorque = {x: (Math.random() - 1)/200, y:(Math.random() - 1)/200, z: (Math.random() - 1)/200};
       rbRef.current.applyTorqueImpulse(randomTorque, true);
