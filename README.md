@@ -1,46 +1,44 @@
-# Astro Starter Kit: Basics
+<h1 align="center">Donne Argent</h1>
 
-```sh
-bun create astro@latest -- --template basics
-```
+<p align="center">
+Un village inquiétant. <br>
+Le puits veut votre argent. <br> Donnez-le dès maintenant.
+</p>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ⚠️ WORK IN PROGRESS
 
-## 🚀 Project Structure
+Ce projet est un jeu en cours de développement, très loin d'être stable ou de proposer beaucoup de features. Testez à vos propres risques.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Structure du projet
+
+Ce projet est réalisé grâce à:
+
+- [Astro](https://astro.build)
+- [React Three Fiber](https://www.react-three.org/)
+- [tailwindcss](https://tailwindcss.com/)
+- [bun](https://bun.sh/)
+- [koota](https://github.com/pmndrs/koota)
 
 ```text
-/
-├── public/
-│   └── favicon.svg
+├── public
+│   ├── fonts // Polices
+│   └── models // Modèles 3D au format .glb
 ├── src
-│   ├── assets
-│   │   └── astro.svg
 │   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+│   │   ├── models // Code pour les modèles
+│   │   ├── scene
+│   │   └── types
+│   ├── koota // Système de stage management
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## 🧞 Commandes
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| `bun install`             | Installe les dépendances                         |
+| `bun dev`             | Démarre le serveur de dev local à l'adresse `localhost:4321`      |
+| `bun build`           | Compile le code dans le dossier `./dist/`          |
+| `bun preview`         | Prévisualise le code compilé avant déploiement     |
+| `bun astro ...`       | Lance des commandes CLI comme `astro add`, `astro check` |
+| `bun astro -- --help` | Demande de l'aide                  |
