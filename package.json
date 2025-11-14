@@ -1,36 +1,41 @@
 {
-  "name": "donneargent",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@fontsource/jacquard-24": "^5.2.6",
-    "@react-three/drei": "^10.6.1",
-    "@react-three/fiber": "^9.3.0",
-    "@react-three/offscreen": "^0.0.8",
-    "@react-three/postprocessing": "^3.0.4",
-    "@react-three/rapier": "^2.1.0",
-    "@react-three/uikit": "^0.8.21",
-    "@tailwindcss/vite": "^4.1.11",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
-    "@types/three": "^0.179.0",
-    "astro": "^5.12.8",
-    "directed": "^0.1.6",
-    "koota": "^0.5.0",
-    "leva": "^0.10.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.11",
-    "three": "^0.179.1"
-  },
-  "trustedDependencies": [
-    "@tailwindcss/oxide"
-  ]
+	"name": "donneargent",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "biome format --write",
+		"lint": "biome format --write"
+	},
+	"dependencies": {
+		"@astrojs/react": "^4.3.0",
+		"@fontsource/jacquard-24": "^5.2.6",
+		"@react-three/drei": "^10.6.1",
+		"@react-three/fiber": "^9.3.0",
+		"@react-three/offscreen": "^0.0.8",
+		"@react-three/postprocessing": "^3.0.4",
+		"@react-three/rapier": "^2.1.0",
+		"@react-three/uikit": "^0.8.21",
+		"@tailwindcss/vite": "^4.1.11",
+		"@types/react": "^19.1.9",
+		"@types/react-dom": "^19.1.7",
+		"@types/three": "^0.179.0",
+		"astro": "^5.12.8",
+		"directed": "^0.1.6",
+		"koota": "^0.5.0",
+		"leva": "^0.10.0",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"tailwindcss": "^4.1.11",
+		"three": "^0.179.1"
+	},
+	"trustedDependencies": [
+		"@tailwindcss/oxide"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "2.3.5"
+	}
 }
