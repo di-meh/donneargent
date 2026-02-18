@@ -8,6 +8,7 @@ Le puits veut votre argent. <br> Donnez-le dès maintenant.
 ## ⚠️ WORK IN PROGRESS
 
 Ce projet est un jeu en cours de développement, très loin d'être stable ou de proposer beaucoup de features. Testez à vos propres risques.
+Je vais prochainement réécrire le projet avec zustand au lieu de koota pour le state management.
 
 ## 🚀 Structure du projet
 
